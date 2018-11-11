@@ -1,0 +1,49 @@
+{% extends 'portfolio/base.html' %}
+{% load staticfiles %}
+{% block content %}
+            {% if user.is_authenticated %}
+                <div class="page-container">
+                    <h2 class="top-menu">Hello {{ user.username }},</h2>
+                </div><br/><br/>
+            {% endif %}
+            <body>
+            <div class="content container">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="links">
+                            <!-- Example row of columns -->
+                                <div class="col-md-4">
+                                    <div class="thumbnail">
+                                        <a href="{% url 'blog:search_medicine' %}"> <img src="{% static "images/ingredients.png" %}" alt="ingredients"  /></a>
+                                        <div class="caption">
+                                            <h2><a href="{% url 'blog:search_medicine' %}">Medicine Information</a></h2>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="thumbnail">
+                                        <a href="{% url 'blog:home2' %}"><img src="{% static "images/pharmacy.jpg" %}" alt="pharmacy"/></a>
+                                        <div class="caption">
+                                            <h2><a href="{% url 'blog:home2' %}">Search Pharmacies</a></h2>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="thumbnail">
+                                        <a href="{% url 'blog:product_list' %}"><img src="{% static "images/medicine.jpg" %}" alt="medicine"/></a>
+                                        <div class="caption">
+                                            <h2><a href="{% url 'blog:product_list' %}">Shop Products</a></h2>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+    </body>
+
+{% endblock %}
+
+
+

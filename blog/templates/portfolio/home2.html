@@ -1,0 +1,16 @@
+{% extends 'portfolio/base.html' %}
+{% load staticfiles %}
+
+{% block content %}
+<div style="margin-left:40%" align=center>
+    <h3 >Search Pharmacies</h3>
+</div>
+<div style="margin-left:40%; margin-top:5%" align=center>
+<p>Please enter your Location</p>
+
+    <form action="/search/" method="get">
+        <input type="text" name="q" placeholder="location/zipcode">
+        <input type="submit" value="Search">
+    </form>
+</div>
+{% endblock %}

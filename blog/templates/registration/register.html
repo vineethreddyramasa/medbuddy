@@ -1,0 +1,17 @@
+{% extends "portfolio/base_visitor.html" %}
+{% load staticfiles %}
+{% load crispy_forms_tags %}
+{% block title %}Register{% endblock %}
+
+{% block body %}
+    <br>
+    <h1>User Registration</h1>
+    <br>
+    <form method="post" action=".">{% csrf_token %}
+        <table border="0">
+            {{ form|crispy }}
+        </table>
+        <br>
+        <input type="submit" value="Register" />
+    </form>
+{% endblock %}
